@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Quản trị - Trường THCS Tân Phú</title>
     
-    <!-- Tự động ép tải bản mới nhất cho máy người xem -->
+    <!-- CHỐNG LƯU BỘ NHỚ ĐỆM (CACHE-CONTROL) -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- ÉP TẢI LẠI TRANG NẾU CÓ BẢN MỚI -->
     <script>
         (function() {
-            // Mỗi lần bạn sửa code và đẩy lên GitHub, chỉ cần đổi số này (vd: '2.0', '2.1', '2.2')
-            const CURRENT_VERSION = '2.0'; 
-            
+            const CURRENT_VERSION = '3.0'; 
             const savedVersion = localStorage.getItem('app_dashboard_version');
             if (savedVersion !== CURRENT_VERSION) {
                 localStorage.setItem('app_dashboard_version', CURRENT_VERSION);
-                // Ép trình duyệt bỏ qua bộ nhớ đệm và tải lại từ máy chủ
                 window.location.reload(true);
             }
         })();
     </script>
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
-    <title>Dashboard Quản trị - Trường THCS Tân Phú</title>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Quản trị - Trường THCS Tân Phú</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -120,7 +114,7 @@
                         </div>
                     </div>
 
-                    <!-- KHU VỰC TÀI KHOẢN CÁ NHÂN (BẤM VÀO ĐỂ BẬT HỘP THOẠI YÊU CẦU MÃ PIN) -->
+                    <!-- KHU VỰC TÀI KHOẢN CÁ NHÂN -->
                     <div onclick="openPinModal()" class="flex items-center space-x-3 pl-4 border-l border-slate-700 cursor-pointer group select-none">
                         <div class="w-9 h-9 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold transition-transform group-hover:scale-105 shadow">NVT</div>
                         <div class="text-left">
@@ -387,7 +381,6 @@
                 <p class="text-xs text-slate-500 mt-1">Khu vực hồ sơ cá nhân của <b>Hiệu trưởng</b> được bảo vệ. Vui lòng nhập mã PIN để tiếp tục.</p>
             </div>
 
-            <!-- Ô nhập mã PIN -->
             <div class="space-y-2">
                 <input id="pin-input" type="password" maxlength="6" placeholder="••••••" class="w-full text-center text-2xl tracking-[0.4em] py-2.5 px-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition font-mono" />
                 <p id="pin-error" class="text-[11px] text-rose-600 font-medium hidden flex items-center justify-center gap-1">
@@ -395,7 +388,6 @@
                 </p>
             </div>
 
-            <!-- Nút bấm: Xác nhận (chặn truy cập) và Quay lại -->
             <div class="grid grid-cols-2 gap-2 pt-1">
                 <button onclick="closePinModal()" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-medium text-xs transition">
                     Quay lại
@@ -543,12 +535,10 @@
             }, 200);
         }
 
-        // Luôn chặn không cho vào và báo lỗi sai mã PIN
         function verifyPin() {
             pinError.classList.remove('hidden');
             pinInput.value = '';
             pinInput.focus();
-            // Hiệu ứng rung nhẹ báo lỗi
             pinBox.classList.add('translate-x-1');
             setTimeout(() => pinBox.classList.remove('translate-x-1'), 100);
         }
