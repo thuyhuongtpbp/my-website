@@ -317,7 +317,7 @@
                                         <span>Báo cáo tháng cần hoàn thành</span>
                                         <i class="fa-solid fa-chevron-right text-[10px] text-blue-400"></i>
                                     </div>
-                                    <div class="text-[10px] text-slate-400 mt-0.5">Hôm nay 14:00 • Nộp Phòng GD&ĐT</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">Hôm nay 14:00 • Nộp Phòng Văn hoá</div>
                                 </div>
                             </div>
                         </div>
@@ -729,9 +729,11 @@
                         Thời hạn để cán bộ - giáo viên nộp hồ sơ minh chứng dự giờ, giáo án và sáng kiến kinh nghiệm.
                     </div>
                     <div class="p-2.5 bg-slate-50 border border-slate-200 rounded text-slate-700 space-y-1">
-                        <div>• <strong>Tổ Khoa học Tự nhiên:</strong> 100% Đầy đủ</div>
-                        <div>• <strong>Tổ Khoa học Xã hội:</strong> Thiếu 2 giáo viên</div>
-                        <div>• <strong>Tổ Văn - Thể - Mỹ:</strong> Thiếu 2 giáo viên</div>
+                        <div>• <strong>Tổ Toán:</strong> 100% Đầy đủ</div>
+                        <div>• <strong>Tổ Văn:</strong> 100% Đầy đủ</div>
+                        <div>• <strong>Tổ Xã hội:</strong> 100% Đầy đủ</div>
+                        <div>• <strong>Tổ Khoa học Tự nhiên:</strong> Thiếu 2 giáo viên</div>
+                        <div>• <strong>Tổ Anh:</strong> Thiếu 2 giáo viên</div>
                     </div>
                 `,
                 actions: `
@@ -742,7 +744,7 @@
                 `
             },
             report: {
-                title: 'Báo cáo Định kỳ Tháng - Phòng GD&ĐT',
+                title: 'Báo cáo Định kỳ Tháng - Phòng Văn hoá',
                 dotColor: 'bg-blue-500',
                 body: `
                     <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-blue-900">
@@ -752,14 +754,14 @@
                         Nội dung: <strong>Báo cáo rà soát cơ sở vật chất, trang thiết bị số và tình hình đội ngũ đầu năm học 2026 - 2027</strong>.
                     </div>
                     <div class="p-3 bg-slate-50 border border-slate-200 rounded space-y-1">
-                        <div>• Nơi nhận: <strong>Phòng GD&ĐT</strong></div>
+                        <div>• Nơi nhận: <strong>Phòng Văn hoá</strong></div>
                         <div>• Trạng thái: <strong class="text-amber-700">Chờ BGH ký số</strong></div>
                         <div>• Hạn nộp: <strong class="text-red-600">14:00 hôm nay</strong></div>
                     </div>
                 `,
                 actions: `
                     <button onclick="closeAlertModal()" class="px-3 py-1.5 bg-white border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-100 font-medium text-xs">Để sau</button>
-                    <button onclick="alert('Đã thực hiện ký số và gửi tự động sang Cổng thông tin Phòng GD&ĐT!'); closeAlertModal();" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-xs flex items-center gap-1.5">
+                    <button onclick="alert('Đã thực hiện ký số và gửi tự động sang Cổng thông tin Phòng Văn hoá!'); closeAlertModal();" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-xs flex items-center gap-1.5">
                         <i class="fa-solid fa-signature text-[10px]"></i> Ký số & Gửi ngay
                     </button>
                 `
