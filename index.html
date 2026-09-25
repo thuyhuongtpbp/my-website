@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="vi">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tự động ép tải bản mới nhất cho máy người xem -->
+    <script>
+        (function() {
+            // Mỗi lần bạn sửa code và đẩy lên GitHub, chỉ cần đổi số này (vd: '2.0', '2.1', '2.2')
+            const CURRENT_VERSION = '2.0'; 
+            
+            const savedVersion = localStorage.getItem('app_dashboard_version');
+            if (savedVersion !== CURRENT_VERSION) {
+                localStorage.setItem('app_dashboard_version', CURRENT_VERSION);
+                // Ép trình duyệt bỏ qua bộ nhớ đệm và tải lại từ máy chủ
+                window.location.reload(true);
+            }
+        })();
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <title>Dashboard Quản trị - Trường THCS Tân Phú</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
